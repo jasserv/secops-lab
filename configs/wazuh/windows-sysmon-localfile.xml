@@ -1,0 +1,6 @@
+<!-- Windows-Host only: forward Sysmon events to Wazuh. Add inside <ossec_config> in ossec.conf,
+     then restart the Wazuh agent service. -->
+<localfile>
+  <location>Microsoft-Windows-Sysmon/Operational</location>
+  <log_format>eventchannel</log_format>
+</localfile>

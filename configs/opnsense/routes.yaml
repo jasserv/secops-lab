@@ -1,0 +1,11 @@
+static_routes:
+  - destination: 10.50.10.0/24
+    gateway: 10.0.0.2
+    description: To Corporate (via FortiGate port1)
+default_route:
+  destination: 0.0.0.0/0
+  gateway: 192.168.1.1
+  description: To Internet
+connected:
+  - { destination: 172.16.1.0/24, interface: LAN,  description: To Attacker }
+  - { destination: 10.0.0.0/24,   interface: OPT1, description: To Internal }

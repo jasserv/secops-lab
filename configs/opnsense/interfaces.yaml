@@ -1,0 +1,25 @@
+# OPNsense 26.1.11_10-amd64 (FreeBSD 14.3-RELEASE-p16, OpenSSL 3.0.21)
+# Reference values from lab documentation, not a config.xml export.
+interfaces:
+  - name: WAN
+    device: vtnet0
+    ipv4: dhcp
+    description: Public Internet
+    upstream_gateway: 192.168.1.1   # home router
+  - name: LAN
+    device: vtnet1
+    ipv4: 172.16.1.1/24
+    description: Attacker Zone
+  - name: OPT1
+    device: vtnet2
+    ipv4: 10.0.0.1/24
+    description: Internal Zone (DMZ / transit)
+  - name: lo0
+    device: lo0
+    ipv4: 127.0.0.1/8
+    ipv6: ::1/128
+    description: Loopback
+
+packages:
+  suricata: 8.0.6
+  wazuh-agent: 1.3_1   # reports Wazuh agent 4.14.5

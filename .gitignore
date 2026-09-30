@@ -1,0 +1,14 @@
+# secrets and raw exports
+*.key
+*.pem
+*.pfx
+*.kdbx
+.env
+*secret*
+*password*
+raw/
+*.conf.bak
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

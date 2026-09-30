@@ -1,0 +1,9 @@
+rules:
+  LAN:                       # Attacker zone
+    - { seq: 1, action: pass, family: ipv4, source: LAN net, destination: any, description: Default allow LAN to any rule }
+    - { seq: 2, action: pass, family: ipv6, source: LAN net, destination: any, description: Default allow LAN IPv6 to any rule }
+  OPT1:                      # DMZ / transit
+    - { seq: 1, action: pass, quick: true, direction: in,  family: ipv4, source: any,           destination: any, gateway: none }
+    - { seq: 2, action: pass, quick: true, direction: in,  family: ipv6, source: any,           destination: any, gateway: none }
+    - { seq: 3, action: pass, quick: true, direction: out, family: ipv4, source: 10.50.10.0/24, destination: any, gateway: Internal }
+    - { seq: 4, action: pass, quick: true, direction: in,  family: ipv4, source: 10.50.10.0/24, destination: any, gateway: Internal }

@@ -1,0 +1,12 @@
+<!-- Wazuh agent 4.14.x: point the agent at the SIEM (Ubuntu-SIEM, 10.0.0.10).
+     Merge into ossec.conf on OPNsense, Ubuntu-FG and Windows-Host.
+     Reconstructed from lab documentation; verify port/protocol against your manager. -->
+<ossec_config>
+  <client>
+    <server>
+      <address>10.0.0.10</address>
+      <port>1514</port>
+      <protocol>tcp</protocol>
+    </server>
+  </client>
+</ossec_config>

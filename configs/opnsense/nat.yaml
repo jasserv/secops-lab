@@ -1,0 +1,10 @@
+# Firewall > NAT > Outbound
+# Automatic rules already cover LAN (172.16.1.0/24) and OPT1 (10.0.0.0/24).
+# The manual rule below covers the corporate network behind the FortiGate,
+# which the automatic rules do not know about.
+outbound_manual:
+  - interface: WAN
+    source: 10.50.10.0/24
+    destination: any
+    translation_target: WAN address
+    protocol_family: ipv4

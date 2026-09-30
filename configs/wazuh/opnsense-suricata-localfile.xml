@@ -1,0 +1,6 @@
+<!-- OPNsense only: forward Suricata EVE JSON alerts. The path below is the OPNsense default;
+     confirm it on your system before enabling. -->
+<localfile>
+  <log_format>json</log_format>
+  <location>/var/log/suricata/eve.json</location>
+</localfile>
